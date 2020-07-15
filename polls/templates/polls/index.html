@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container text-center m-auto">
+<br>
+<h1 style="color:white">Welcome to WaitTime!</h1>
+<h6 style="color:white">Vote on and view restaurant wait times!</h6>
+</div>
+<br>
+    {% if latest_question_list %}
+
+        {% for question in latest_question_list %}
+        
+        <div class="border border-danger m-auto text-center" style="width: 20rem;">
+            <div class="card-body">
+                <h3 class="card-title" style="color:white">{{ question }}</h3>
+                <a href="{% url 'polls:results' question.id %}" class="btn btn-danger">Wait Times</a>
+            </div>
+        </div>
+        <br>
+
+         {% endfor %}
+
+        {% else %}
+    {% endif %}
+
+{% endblock %}
+

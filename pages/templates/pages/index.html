@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div>
+<div class="container text-center m-auto">
+    <br>
+    <h1 style="color: white; margin-top: 3em">Welcome to WaitTime!</h1>
+    <br>
+    <h4 style="color: white">Tired of trying to guess how long you'll have to wait?</h4>
+    <br>
+    <a href="{% url 'polls:index' %}" class="btn btn-danger">Get Started!</a>
+    </div>
+</div>
+
+
+{% endblock %}

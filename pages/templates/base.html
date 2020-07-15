@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>WaitTime</title>
+</head>
+<body style="background-color:black">
+    <nav class="navbar navbar-dark bg-dark">
+       <h3><a href="{% url 'pages:index' %}" style="color:white">Home</a></h3>
+       <h3><a href="{% url 'polls:index' %}" style="color:white">Waits</a></h3>
+
+       <!-- Changes buttons based on whether a user is logged in or not -->
+       {%  if user.is_anonymous%}
+       <h3><a href="{% url 'users:logIn' %}" style="color:white">Login</a></h3>
+
+       {% else %}
+       <h3><a href="{% url 'users:logOut' %}" style="color:white">Logout</a></h3>
+
+       {% endif %}
+    </nav>
+    
+    {% block content %}
+
+    {% endblock %}
+
+</body>
+</html>
